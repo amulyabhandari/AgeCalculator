@@ -14,9 +14,9 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   DateTime todayDate=DateTime.now();
   DateTime dob= DateTime(2000,1,1);
-  late AgeDuration _ageDuration;
-  late AgeDuration _nextBirthdate;
-  late int _nextbdayWeekDay;
+   AgeDuration? _ageDuration;
+   AgeDuration? _nextBirthdate;
+   int? _nextbdayWeekDay;
   List _months= [
     "months",
     "January",
@@ -233,7 +233,7 @@ class _HomepageState extends State<Homepage> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                  "${_ageDuration.years}",
+                                  "${_ageDuration!.years}",
                                   style: TextStyle(
                             color: Colors.yellow,
                             fontSize: 76,
@@ -261,7 +261,7 @@ class _HomepageState extends State<Homepage> {
                             ],
                           ),
                           Text(
-                            "${_ageDuration.months} months | ${_ageDuration.days} days ",
+                            "${_ageDuration!.months} months | ${_ageDuration!.days} days ",
                             style:
                             TextStyle(
                               color: Colors.white,
@@ -301,7 +301,7 @@ class _HomepageState extends State<Homepage> {
                             size:40,
                             ),
                             Text(
-                              "${_weeks[_nextbdayWeekDay]}",
+                              "${_weeks[_nextbdayWeekDay!]}",
                               style: TextStyle(
                                 color:Colors.white,
                                 fontSize: 22,
@@ -309,7 +309,7 @@ class _HomepageState extends State<Homepage> {
                               ),
                             ),
                             Text(
-                              "${_nextBirthdate.months} months | ${_nextBirthdate.days}days",
+                              "${_nextBirthdate!.months} months | ${_nextBirthdate!.days}days",
                               style: TextStyle(
                                 color:Colors.white,
                                 fontSize: 20,
@@ -367,7 +367,7 @@ class _HomepageState extends State<Homepage> {
                              height:5,
                             ),
                             Text(
-                              "${_ageDuration.years}",
+                              "${_ageDuration!.years}",
                               style: TextStyle(
                                 color:Colors.white,
                                 fontSize: 28,
@@ -390,7 +390,7 @@ class _HomepageState extends State<Homepage> {
                               height:5,
                             ),
                             Text(
-                              "${((_ageDuration.years) * 12)+ (_ageDuration.months)}",
+                              "${((_ageDuration!.years) * 12)+ (_ageDuration!.months)}",
                               style: TextStyle(
                                 color:Colors.white,
                                 fontSize: 28,
